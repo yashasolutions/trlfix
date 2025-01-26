@@ -13,8 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build
+      - name: Setup Chrome
         uses: browser-actions/setup-chrome@v1
+
+      - name: Build
         run: |
           mkdir -p build
           chrome --pack-extension=./chrome-src
