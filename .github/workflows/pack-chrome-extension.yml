@@ -2,8 +2,8 @@ name: Pack Chrome Extension
 
 on:
   push:
-    branch:
-      - master
+    tags:
+      - 'v*'
 
 permissions:
   contents: write
