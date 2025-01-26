@@ -3,7 +3,7 @@ name: Pack Chrome Extension
 on:
   push:
     tags:
-      - 'v*'
+      - '*.*.*'
 
 permissions:
   contents: write
