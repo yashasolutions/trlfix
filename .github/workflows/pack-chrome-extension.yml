@@ -19,14 +19,11 @@ jobs:
 
       - name: Build
         run: |
-          mkdir -p build
           ${{steps.setup-chrome.outputs.chrome-path}} --pack-extension=./chrome-src
-          mv chrome-src.crx build/chrome-trlfix.crx
-          mv chrome-src.pem build/key.pem
 
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            build/chrome-trlfix.crx
+            chrome-src.crx
