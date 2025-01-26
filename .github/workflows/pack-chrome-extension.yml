@@ -2,8 +2,8 @@ name: Pack Chrome Extension
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branch:
+      - master
 
 jobs:
   build:
