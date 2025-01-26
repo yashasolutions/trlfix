@@ -19,7 +19,7 @@ jobs:
 
       - name: Build
         run: |
-          ${{steps.setup-chrome.outputs.chrome-path}} --pack-extension=./chrome-src
+          ${{steps.setup-chrome.outputs.chrome-path}} --pack-extension=./chrome-src --no-sandbox
 
       - name: Release
         uses: softprops/action-gh-release@v2
