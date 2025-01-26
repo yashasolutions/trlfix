@@ -20,6 +20,8 @@ jobs:
       - name: Build
         run: |
           ${{steps.setup-chrome.outputs.chrome-path}} --pack-extension=./chrome-src --no-sandbox
+          mv chrome-src.crx chrome-trlfix.crx
+          ls -l
 
       - name: Release
         uses: actions/create-release@v1
@@ -35,6 +37,6 @@ jobs:
         uses: actions/upload-release-asset@v1
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./chrome-src.crx
+          asset_path: ./chrome-trlfix.crx
           asset_name: chrome-trlfix.crx
           asset_content_type: application/x-chrome-extension
